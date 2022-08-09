@@ -1,32 +1,18 @@
 #include "parsing.h"
 
-STACK_DECLARE(char)
-
-int is_short_operator(char a);
-char is_long_operator(char* a);
-char* number_handler(char* input, char** res, int* len);
-char* x_handler(char* input, char** res, int* len);
-char* short_operator_handler(char* input, char** res, int* len, int* err,
-                             stack** head);
-int long_operator_handler(char op, char** res, int* len, int* err,
-                          stack** head);
-void from_stack_to_queue(char** res, int* len, stack** head, int* err);
-int unary_handler(char* input, int len);
-int precedence_check(char a, char b);
-int precedence_list(char a);
-int left_check(char a);
-char space_trim(char* a);
+#include "../calc_c.h"
 
 char* parsing(char* input, int* err) {
   int len = 1;
   char* res = calloc(len, sizeof(char));
   if (!res) exit(0);
-  stack* head = init(' ');
+  stack* head = init_char(' ');
   for (; *input && !(*err);) {
+    // printf("%d %s\n ", *err, input);
     if (is_number(*input))
-      input = number_handler(input, &res, &len);
+      input = number_handler_parse(input, &res, &len);
     else if (*input == 'x' || *input == 'X')
-      input = x_handler(input, &res, &len);
+      input = x_handler_parse(input, &res, &len);
     else if (is_short_operator(*input))
       input = short_operator_handler(input, &res, &len, err, &head);
     else if (is_long_operator(input))
@@ -40,7 +26,7 @@ char* parsing(char* input, int* err) {
   }
   while (!(*err) && head->value != ' ')
     from_stack_to_queue(&res, &len, &head, err);
-  destroy(head);
+  destroy_char(head);
   return res;
 }
 
@@ -77,7 +63,7 @@ char is_long_operator(char* a) {
   return res;
 }
 
-char* number_handler(char* input, char** res, int* len) {
+char* number_handler_parse(char* input, char** res, int* len) {
   char* end;
   strtod(input, &end);
   *len += end - input + 1;
@@ -88,7 +74,7 @@ char* number_handler(char* input, char** res, int* len) {
   return end;
 }
 
-char* x_handler(char* input, char** res, int* len) {
+char* x_handler_parse(char* input, char** res, int* len) {
   *len += 2;
   *res = realloc(*res, *len * sizeof(char));
   if (!(*res)) exit(0);
@@ -100,21 +86,23 @@ char* x_handler(char* input, char** res, int* len) {
 char* short_operator_handler(char* input, char** res, int* len, int* err,
                              stack** head) {
   char in_stack = *input;
-  if (in_stack == '+') in_stack = unary_handler(input, *len) ? 'p' : '+';
-  if (in_stack == '-') in_stack = unary_handler(input, *len) ? 'u' : '-';
+  if (in_stack == '+') in_stack = unary_handler_parse(input, *len) ? 'p' : '+';
+  if (in_stack == '-') in_stack = unary_handler_parse(input, *len) ? 'u' : '-';
+  // printf("%c\n", in_stack);
   if (in_stack == ')') {
     while ((*head)->value != '(' && (*head)->value != ' ') {
+      // printf("%s %c\n", *res, (*head)->value);
       from_stack_to_queue(res, len, head, err);
     }
     if ((*head)->value == ' ')
       *err = 1;
     else
-      pop(head);
+      pop_char(head);
   } else {
     while (precedence_check((*head)->value, in_stack)) {
       from_stack_to_queue(res, len, head, err);
     }
-    *head = push(*head, in_stack);
+    *head = push_char(*head, in_stack);
   }
   return ++input;
 }
@@ -125,11 +113,11 @@ int long_operator_handler(char op, char** res, int* len, int* err,
   if (op == 'a' || op == 'o' || op == 'k' || op == 'i')
     op_len = 4;
   else if (op == 'l')
-    op_len == 2;
+    op_len = 2;
   while (precedence_check((*head)->value, op)) {
     from_stack_to_queue(res, len, head, err);
   }
-  *head = push(*head, op);
+  *head = push_char(*head, op);
   return op_len;
 }
 
@@ -142,14 +130,14 @@ void from_stack_to_queue(char** res, int* len, stack** head, int* err) {
   if (!(*head) || (*head)->value == ' ' || (*head)->value == '(')
     *err = 1;
   else
-    out = pop(head);
+    out = pop_char(head);
   char* curr = *res + *len - 3;
   sprintf(curr, "%c ", out);
 }
 
-int unary_handler(char* input, int len) {
+int unary_handler_parse(char* input, int len) {
   int res = 0;
-  if (len == 1 || space_trim(input) == '(') res = 1;
+  if (len == 1 || space_trim(--input) == '(') res = 1;
   return res;
 }
 
@@ -201,7 +189,8 @@ int left_check(char a) {
 }
 
 char space_trim(char* a) {
-  while (*a-- == ' ') {
+  while (*a == ' ') {
+    --a;
   }
   return *a;
 }

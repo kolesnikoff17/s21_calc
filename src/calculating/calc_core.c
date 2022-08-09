@@ -1,27 +1,26 @@
 #include "calc_core.h"
 
-STACK_DECLARE(double)
-
-int is_binary(char a);
-char* number_handler(char* polish, stack** head);
-char* x_handler(char* polish, stack** head, double x);
-void unary_handler(char a, stack* head);
-void binary_handler(char a, stack** head, int* err);
+#include "../calc_c.h"
 
 double calc_res(char* polish, int* err, double x) {
   char* end;
   double res = strtod(polish, &end);
   if (end == polish && *polish != 'x') {
+    // printf("%s\n", polish);
     *err = 1;
+    // printf("aboba\n");
     return 0;
   }
   stack* head = NULL;
   if (*polish == 'x') {
-    head = init(x);
+    head = init_double(x);
+    ++polish;
   } else {
-    head = init(res);
+    head = init_double(res);
     polish = end;
   }
+  // printf("%lf %d\n", res, *err);
+  // printf("%lf\n", head->value);
   for (; *polish && !(*err) && head;) {
     if (*polish == ' ') {
       ++polish;
@@ -38,7 +37,7 @@ double calc_res(char* polish, int* err, double x) {
   }
   if (!head || head->next) *err = 1;
   if (!(*err)) res = head->value;
-  destroy(head);
+  destroy_double(head);
   return res;
 }
 
@@ -51,12 +50,12 @@ int is_binary(char a) {
 
 char* number_handler(char* polish, stack** head) {
   char* end;
-  *head = push(*head, strtod(polish, &end));
+  *head = push_double(*head, strtod(polish, &end));
   return end;
 }
 
 char* x_handler(char* polish, stack** head, double x) {
-  *head = push(*head, x);
+  *head = push_double(*head, x);
   return ++polish;
 }
 
@@ -87,7 +86,7 @@ void binary_handler(char a, stack** head, int* err) {
   if (!(*head)->next)
     *err = 1;
   else {
-    double tmp = pop(head);
+    double tmp = pop_double(head);
     if (a == '+')
       (*head)->value = (*head)->value + tmp;
     else if (a == '-')

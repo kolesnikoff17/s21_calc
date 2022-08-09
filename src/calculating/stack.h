@@ -6,7 +6,7 @@
     struct stack *next;                                               \
   } stack;                                                            \
                                                                       \
-  struct stack *init(x a) {                                           \
+  struct stack *init_##x(x a) {                                       \
     struct stack *p;                                                  \
     p = (struct stack *)malloc(sizeof(struct stack));                 \
     p->value = a;                                                     \
@@ -14,14 +14,14 @@
     return p;                                                         \
   }                                                                   \
                                                                       \
-  struct stack *push(struct stack *head, x a) {                       \
+  struct stack *push_##x(struct stack *head, x a) {                   \
     struct stack *tmp = (struct stack *)malloc(sizeof(struct stack)); \
     tmp->next = head;                                                 \
     tmp->value = a;                                                   \
     return tmp;                                                       \
   }                                                                   \
                                                                       \
-  x pop(struct stack **head) {                                        \
+  x pop_##x(struct stack **head) {                                    \
     x out;                                                            \
     struct stack *tmp;                                                \
     tmp = *head;                                                      \
@@ -31,7 +31,7 @@
     return out;                                                       \
   }                                                                   \
                                                                       \
-  void destroy(struct stack *head) {                                  \
+  void destroy_##x(struct stack *head) {                              \
     while (head) {                                                    \
       struct stack *tmp;                                              \
       tmp = head;                                                     \
