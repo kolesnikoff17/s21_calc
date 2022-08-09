@@ -10,10 +10,12 @@ char* short_operator_handler(char* input, char** res, int* len, int* err,
                              stack** head);
 int long_operator_handler(char op, char** res, int* len, int* err,
                           stack** head);
-void from_stack_to_queue(char** res, int* len, stack** head);
+void from_stack_to_queue(char** res, int* len, stack** head, int* err);
 int unary_handler(char* input, int len);
 int precedence_check(char a, char b);
 int precedence_list(char a);
+int left_check(char a);
+char space_trim(char* a);
 
 char* parsing(char* input, int* err) {
   int len = 1;
@@ -21,7 +23,6 @@ char* parsing(char* input, int* err) {
   if (!res) exit(0);
   stack* head = init(' ');
   for (; *input && !(*err);) {
-    printf("%s\n", res);
     if (is_number(*input))
       input = number_handler(input, &res, &len);
     else if (*input == 'x' || *input == 'X')
@@ -32,10 +33,13 @@ char* parsing(char* input, int* err) {
       // TODO fix this ugly part somehow
       input += long_operator_handler(is_long_operator(input), &res, &len, err,
                                      &head);
+    else if (*input == ' ')
+      ++input;
     else
       *err = 1;
   }
-  while (!(*err) && head->value != ' ') from_stack_to_queue(&res, &len, &head);
+  while (!(*err) && head->value != ' ')
+    from_stack_to_queue(&res, &len, &head, err);
   destroy(head);
   return res;
 }
@@ -79,7 +83,7 @@ char* number_handler(char* input, char** res, int* len) {
   *len += end - input + 1;
   *res = realloc(*res, *len * sizeof(char));
   if (!(*res)) exit(0);
-  char* curr = *res + *len - (end - input + 1);
+  char* curr = *res + *len - 3;
   sprintf(curr, "%.*s ", end - input, input);
   return end;
 }
@@ -88,7 +92,7 @@ char* x_handler(char* input, char** res, int* len) {
   *len += 2;
   *res = realloc(*res, *len * sizeof(char));
   if (!(*res)) exit(0);
-  char* curr = *res + *len - 2;
+  char* curr = *res + *len - 3;
   sprintf(curr, "x ");
   return ++input;
 }
@@ -100,7 +104,7 @@ char* short_operator_handler(char* input, char** res, int* len, int* err,
   if (in_stack == '-') in_stack = unary_handler(input, *len) ? 'u' : '-';
   if (in_stack == ')') {
     while ((*head)->value != '(' && (*head)->value != ' ') {
-      from_stack_to_queue(res, len, head);
+      from_stack_to_queue(res, len, head, err);
     }
     if ((*head)->value == ' ')
       *err = 1;
@@ -108,7 +112,7 @@ char* short_operator_handler(char* input, char** res, int* len, int* err,
       pop(head);
   } else {
     while (precedence_check((*head)->value, in_stack)) {
-      from_stack_to_queue(res, len, head);
+      from_stack_to_queue(res, len, head, err);
     }
     *head = push(*head, in_stack);
   }
@@ -123,30 +127,37 @@ int long_operator_handler(char op, char** res, int* len, int* err,
   else if (op == 'l')
     op_len == 2;
   while (precedence_check((*head)->value, op)) {
-    from_stack_to_queue(res, len, head);
+    from_stack_to_queue(res, len, head, err);
   }
   *head = push(*head, op);
   return op_len;
 }
 
-void from_stack_to_queue(char** res, int* len, stack** head) {
+void from_stack_to_queue(char** res, int* len, stack** head, int* err) {
+  char out = 0;
   *len += 2;
   *res = realloc(*res, *len * sizeof(char));
   if (!(*res)) exit(0);
-  char* curr = *res + *len - 2;
-  sprintf(curr, "%c ", pop(head));
+  // printf("%c\n", (*head)->value);
+  if (!(*head) || (*head)->value == ' ' || (*head)->value == '(')
+    *err = 1;
+  else
+    out = pop(head);
+  char* curr = *res + *len - 3;
+  sprintf(curr, "%c ", out);
 }
 
 int unary_handler(char* input, int len) {
   int res = 0;
-  // TODO space handlers case : (  -3)
-  if (len == 1 || *(input - 1) == '(') res = 1;
+  if (len == 1 || space_trim(input) == '(') res = 1;
   return res;
 }
 
 int precedence_check(char a, char b) {
   int res = 0;
-  if (precedence_list(a) >= precedence_list(b)) res = 1;
+  if ((precedence_list(a) > precedence_list(b) && a != '(') ||
+      (precedence_list(a) == precedence_list(b) && left_check(b)))
+    res = 1;
   return res;
 }
 
@@ -181,4 +192,16 @@ int precedence_list(char a) {
       break;
   }
   return res;
+}
+
+int left_check(char a) {
+  int res = 0;
+  if (a == '*' || a == '/' || a == 'm' || a == '+' || a == '-') res = 1;
+  return res;
+}
+
+char space_trim(char* a) {
+  while (*a-- == ' ') {
+  }
+  return *a;
 }

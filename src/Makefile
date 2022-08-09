@@ -56,7 +56,7 @@ $(OBJ_GCOV_DIR)/%.o: %.c $(HEADER)
 clean:
 	$(RM) $(OBJ_DIR) $(OBJ_GCOV_DIR)
 	$(RM) $(TARGET_EXEC) *.a
-	$(RM) *.gc* test* .vscode
+	$(RM) *.gc* test .vscode test.dSYM
 
 
 lint:
