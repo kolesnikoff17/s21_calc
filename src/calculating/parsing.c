@@ -69,8 +69,8 @@ char* number_handler_parse(char* input, char** res, int* len) {
   *len += end - input + 1;
   *res = realloc(*res, *len * sizeof(char));
   if (!(*res)) exit(0);
-  char* curr = *res + *len - 3;
-  sprintf(curr, "%.*s ", end - input, input);
+  char* curr = *res + *len - (end - input + 2);
+  sprintf(curr, "%.*s ", (int)(end - input), input);
   return end;
 }
 

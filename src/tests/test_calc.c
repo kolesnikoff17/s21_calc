@@ -11,8 +11,8 @@ END_TEST
 
 START_TEST(parse_test_2) {
   int err = 0;
-  char *out = parsing("4 + 2 * 9 / 8", &err);
-  ck_assert_str_eq(out, "4 2 9 * 8 / + ");
+  char *out = parsing("56-3", &err);
+  ck_assert_str_eq(out, "56 3 - ");
 }
 END_TEST
 
@@ -121,11 +121,11 @@ END_TEST
 
 START_TEST(calc_test_5) {
   int err = 0;
-  double out = calc_res(parsing("ln(-1)", &err), &err, 0);
+  double out = calc_res(parsing("56-3", &err), &err, 0);
   if (!isnan(out))
-    ck_assert_double_eq_tol(out, log(-1), 1e-7);
+    ck_assert_double_eq_tol(out, 56 - 3, 1e-7);
   else
-    ck_assert_double_nan(log(-1));
+    ck_assert_double_nan(56 - 3);
 }
 END_TEST
 
