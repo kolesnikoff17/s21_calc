@@ -1212,8 +1212,47 @@ QPushButton: pressed {
      <height>24</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuMod">
+    <property name="title">
+     <string>Mod</string>
+    </property>
+    <addaction name="actionCalc"/>
+    <addaction name="actionPlot"/>
+    <addaction name="actionCredit"/>
+   </widget>
+   <addaction name="menuMod"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionCalc">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Calc</string>
+   </property>
+  </action>
+  <action name="actionPlot">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Plot</string>
+   </property>
+  </action>
+  <action name="actionCredit">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Credit</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

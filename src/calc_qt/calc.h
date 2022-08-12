@@ -3,6 +3,11 @@
 
 #include <QMainWindow>
 
+#include "WindowSwitch.h"
+
+extern "C" {
+#include "../calc_c.h"
+}
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -28,5 +33,7 @@ class calc : public QMainWindow {
   void EqualButtonPressed();
   void ResetStyleSheet();
   void FuncButtonPressed();
+  void SwitchToPlot();
+  void SwitchToCredit();
 };
 #endif  // CALC_H

@@ -1,6 +1,6 @@
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 CONFIG += c++17
 
@@ -12,15 +12,25 @@ SOURCES += \
     ../calculating/parsing.c \
     ../calculating/calc_core.c \
     ../calculating/common.c \
+    ../bonus/credit_c.c \
+    ../qcustomplot-source/qcustomplot.cpp \
+    credit.cpp \
     main.cpp \
-    calc.cpp
+    calc.cpp \
+    plot.cpp
 
 HEADERS += \
-    calc.h
+    ../qcustomplot-source/qcustomplot.h \
+    WindowSwitch.h \
+    calc.h \
+    credit.h \
+    plot.h
 #    ../calc_c.h
 
 FORMS += \
-    calc.ui
+    calc.ui \
+    credit.ui \
+    plot.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
