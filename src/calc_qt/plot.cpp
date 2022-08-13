@@ -2,6 +2,7 @@
 
 #include "calc.h"
 #include "credit.h"
+#include "deposit.h"
 #include "ui_plot.h"
 
 Plot::Plot(QWidget *parent) : QMainWindow(parent), ui(new Ui::Plot) {
@@ -21,11 +22,17 @@ Plot::Plot(QWidget *parent) : QMainWindow(parent), ui(new Ui::Plot) {
           SLOT(ResetStyleSheet()));
   connect(ui->xMax, SIGNAL(textChanged(QString)), this,
           SLOT(ResetStyleSheet()));
+  connect(ui->yMin, SIGNAL(textChanged(QString)), this,
+          SLOT(ResetStyleSheet()));
+  connect(ui->yMax, SIGNAL(textChanged(QString)), this,
+          SLOT(ResetStyleSheet()));
 
   QAction *Calc = Plot::findChild<QAction *>("actionCalc");
   connect(Calc, SIGNAL(toggled(bool)), this, SLOT(SwitchToCalc()));
   QAction *Credit = Plot::findChild<QAction *>("actionCredit");
   connect(Credit, SIGNAL(toggled(bool)), this, SLOT(SwitchToCredit()));
+  QAction *Dep = Plot::findChild<QAction *>("actionDeposit");
+  connect(Dep, SIGNAL(toggled(bool)), this, SLOT(SwitchToDeposit()));
 }
 
 Plot::~Plot() { delete ui; }
@@ -76,6 +83,8 @@ void Plot::SwitchToCalc() { SwitchW<Plot, calc>(this); }
 
 void Plot::SwitchToCredit() { SwitchW<Plot, Credit>(this); }
 
+void Plot::SwitchToDeposit() { SwitchW<Plot, Deposit>(this); }
+
 bool Plot::xcheckLimits() {
   bool ok1, ok2;
   double xmin = ui->xMin->text().toDouble(&ok1);
@@ -97,5 +106,7 @@ bool Plot::LimitsAreBlank() {
 void Plot::ResetLimits() {
   ui->yMax->clear();
   ui->yMin->clear();
+  ui->xMax->setText("10");
+  ui->xMin->setText("-10");
   MakePlot();
 }

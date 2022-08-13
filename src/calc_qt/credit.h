@@ -28,6 +28,7 @@ class Credit : public QMainWindow {
   void CalculateResult();
   void SwitchToCalc();
   void SwitchToPlot();
+  void SwitchToDeposit();
   void ResetStyleSheet();
 };
 

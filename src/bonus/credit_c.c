@@ -14,7 +14,7 @@ cr_res credit_res(double sum, int time, double perc, int mode) {
     double main = sum / time;
     res.monthly = round(main + sum * i);
     res.monthly2 = round(main + main * i);
-    res.over = round(i * 12 * sum * (time + 1) / 2.);
+    res.over = round(i * sum * (time + 1) / 2.);
     res.total = round(res.over + sum);
   }
   return res;

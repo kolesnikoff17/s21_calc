@@ -13,8 +13,10 @@ SOURCES += \
     ../calculating/calc_core.c \
     ../calculating/common.c \
     ../bonus/credit_c.c \
+    ../bonus/deposit_c.c \
     ../qcustomplot-source/qcustomplot.cpp \
     credit.cpp \
+    deposit.cpp \
     main.cpp \
     calc.cpp \
     plot.cpp
@@ -24,12 +26,14 @@ HEADERS += \
     WindowSwitch.h \
     calc.h \
     credit.h \
-    plot.h
-#    ../calc_c.h
+    deposit.h \
+    plot.h \
+    ../calc_c.h
 
 FORMS += \
     calc.ui \
     credit.ui \
+    deposit.ui \
     plot.ui
 
 # Default rules for deployment.

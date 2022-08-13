@@ -37,7 +37,7 @@ double calc_res(char* polish, int* err, double x) {
   }
   if (!head || head->next) *err = 1;
   if (!(*err)) res = head->value;
-  destroy_double(head);
+  if (head) destroy_double(head);
   return res;
 }
 

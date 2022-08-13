@@ -3,6 +3,7 @@
 
 #include "calc.h"
 #include "plot.h"
+#include "deposit.h"
 #include "ui_credit.h"
 
 Credit::Credit(QWidget *parent) : QMainWindow(parent), ui(new Ui::Credit) {
@@ -12,6 +13,15 @@ Credit::Credit(QWidget *parent) : QMainWindow(parent), ui(new Ui::Credit) {
   connect(Plot, SIGNAL(toggled(bool)), this, SLOT(SwitchToPlot()));
   QAction *calc = Credit::findChild<QAction *>("actionCalc");
   connect(calc, SIGNAL(toggled(bool)), this, SLOT(SwitchToCalc()));
+  QAction *Dep = Credit::findChild<QAction *>("actionDeposit");
+  connect(Dep, SIGNAL(toggled(bool)), this, SLOT(SwitchToDeposit()));
+
+  connect(ui->Months, SIGNAL(textChanged(QString)), this,
+          SLOT(ResetStyleSheet()));
+  connect(ui->Summ, SIGNAL(textChanged(QString)), this,
+          SLOT(ResetStyleSheet()));
+  connect(ui->Perc, SIGNAL(textChanged(QString)), this,
+          SLOT(ResetStyleSheet()));
 
   QPushButton *Res = Credit::findChild<QPushButton *>("Res");
   connect(Res, SIGNAL(released()), this, SLOT(CalculateResult()));
@@ -22,6 +32,8 @@ Credit::~Credit() { delete ui; }
 void Credit::SwitchToCalc() { SwitchW<Credit, calc>(this); }
 
 void Credit::SwitchToPlot() { SwitchW<Credit, Plot>(this); }
+
+void Credit::SwitchToDeposit() { SwitchW<Credit, Deposit>(this); }
 
 void Credit::ResetStyleSheet() {
   ui->Res->setStyleSheet("background-color: black");

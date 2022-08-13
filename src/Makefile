@@ -11,7 +11,7 @@ ifeq ($(shell uname), Linux)
 LCHECK += $(LIN_FLAGS)
 endif
 
-SOURCES:= $(wildcard calculating/*.c)
+SOURCES:= $(wildcard calculating/*.c) $(wildcard bonus/*.c)
 
 OBJ_DIR := obj
 OBJ_GCOV_DIR := obj_gcov

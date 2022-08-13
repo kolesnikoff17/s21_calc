@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>639</width>
-    <height>595</height>
+    <width>616</width>
+    <height>564</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Plot</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -286,6 +286,12 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>533</width>
+        <height>22</height>
+       </size>
+      </property>
       <property name="font">
        <font>
         <family>Arial</family>
@@ -415,7 +421,7 @@ QPushButton: pressed {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>639</width>
+     <width>616</width>
      <height>24</height>
     </rect>
    </property>
@@ -426,6 +432,7 @@ QPushButton: pressed {
     <addaction name="actionCalc"/>
     <addaction name="actionPlot"/>
     <addaction name="actionCredit"/>
+    <addaction name="actionDeposit"/>
    </widget>
    <addaction name="menuMod"/>
   </widget>
@@ -461,6 +468,14 @@ QPushButton: pressed {
    </property>
    <property name="text">
     <string>Credit</string>
+   </property>
+  </action>
+  <action name="actionDeposit">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Deposit</string>
    </property>
   </action>
  </widget>

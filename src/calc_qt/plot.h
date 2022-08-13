@@ -26,6 +26,7 @@ class Plot : public QMainWindow {
   void ResetStyleSheet();
   void SwitchToCalc();
   void SwitchToCredit();
+  void SwitchToDeposit();
   void ResetLimits();
 
  private:

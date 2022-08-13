@@ -35,5 +35,8 @@ class calc : public QMainWindow {
   void FuncButtonPressed();
   void SwitchToPlot();
   void SwitchToCredit();
+  void SwitchToDeposit();
+  void MClearButtonPressed();
+  void MButtonPressed();
 };
 #endif  // CALC_H

@@ -2,6 +2,7 @@
 
 #include "credit.h"
 #include "plot.h"
+#include "deposit.h"
 #include "ui_calc.h"
 
 calc::calc(QWidget *parent) : QMainWindow(parent), ui(new Ui::calc) {
@@ -37,6 +38,14 @@ calc::calc(QWidget *parent) : QMainWindow(parent), ui(new Ui::calc) {
   connect(clearAllButton, SIGNAL(released()), this,
           SLOT(ClearAllButtonPressed()));
 
+  QPushButton *MC = calc::findChild<QPushButton *>("MC");
+  connect(MC, SIGNAL(released()), this,
+          SLOT(MClearButtonPressed()));
+
+  QPushButton *MPlus = ui->MPLus;
+  connect(MPlus, SIGNAL(released()), this,
+          SLOT(MButtonPressed()));
+
   QPushButton *EqualButton = calc::findChild<QPushButton *>("Equal");
   connect(EqualButton, SIGNAL(released()), this, SLOT(EqualButtonPressed()));
   connect(ui->Display, SIGNAL(returnPressed()), this,
@@ -51,6 +60,8 @@ calc::calc(QWidget *parent) : QMainWindow(parent), ui(new Ui::calc) {
   connect(Plot, SIGNAL(toggled(bool)), this, SLOT(SwitchToPlot()));
   QAction *Credit = calc::findChild<QAction *>("actionCredit");
   connect(Credit, SIGNAL(toggled(bool)), this, SLOT(SwitchToCredit()));
+  QAction *Dep = calc::findChild<QAction *>("actionDeposit");
+  connect(Dep, SIGNAL(toggled(bool)), this, SLOT(SwitchToDeposit()));
 }
 
 calc::~calc() { delete ui; }
@@ -59,7 +70,6 @@ void calc::NumPressed() {
   QPushButton *button = (QPushButton *)sender();
   QString butVal = button->text();
   QString displayVal = ui->Display->text();
-
   QString newVal = displayVal + butVal;
   ui->Display->setText(newVal);
 }
@@ -68,7 +78,6 @@ void calc::MathButtonPressed() {
   QPushButton *button = (QPushButton *)sender();
   QString butVal = button->text();
   QString displayVal = ui->Display->text();
-
   QString newVal = displayVal + butVal;
   ui->Display->setText(newVal);
 }
@@ -77,7 +86,10 @@ void calc::ClearButtonPressed() { ui->Display->backspace(); }
 
 void calc::ClearAllButtonPressed() {
   ui->Display->clear();
-  ui->FuncDisplay->clear();
+}
+
+void calc::MClearButtonPressed() {
+    ui->FuncDisplay->clear();
 }
 
 void EqHandler(QString str, double x, QLineEdit *line) {
@@ -101,9 +113,18 @@ void calc::EqualButtonPressed() {
   if (!displayVal.contains("x", Qt::CaseInsensitive)) {
     EqHandler(displayVal, 0, ui->Display);
   } else {
-    ui->FuncDisplay->setText(displayVal);
-    ui->Display->clear();
+    ui->Display->setStyleSheet("color: red");
   }
+}
+
+void calc::MButtonPressed() {
+    QString displayVal = ui->Display->text();
+    if (displayVal.contains("x", Qt::CaseInsensitive)) {
+        ui->FuncDisplay->setText(displayVal);
+        ui->Display->clear();
+    } else {
+        ui->Display->setStyleSheet("color: red");
+    }
 }
 
 void calc::ResetStyleSheet() {
@@ -128,3 +149,5 @@ void calc::FuncButtonPressed() {
 void calc::SwitchToPlot() { SwitchW<calc, Plot>(this); }
 
 void calc::SwitchToCredit() { SwitchW<calc, Credit>(this); }
+
+void calc::SwitchToDeposit() { SwitchW<calc, Deposit>(this); }
