@@ -1,5 +1,5 @@
-#ifndef CALC_H
-#define CALC_H
+#ifndef SRC_CALC_QT_CALC_H_
+#define SRC_CALC_QT_CALC_H_
 
 #include <QMainWindow>
 
@@ -19,7 +19,7 @@ class calc : public QMainWindow {
   Q_OBJECT
 
  public:
-  calc(QWidget *parent = nullptr);
+  explicit calc(QWidget *parent = nullptr);
   ~calc();
 
  private:
@@ -39,4 +39,4 @@ class calc : public QMainWindow {
   void MClearButtonPressed();
   void MButtonPressed();
 };
-#endif  // CALC_H
+#endif  // SRC_CALC_QT_CALC_H_

@@ -83,9 +83,9 @@ void unary_handler(char a, stack* head) {
 }
 
 void binary_handler(char a, stack** head, int* err) {
-  if (!(*head)->next)
+  if (!(*head)->next) {
     *err = 1;
-  else {
+  } else {
     double tmp = pop_double(head);
     if (a == '+')
       (*head)->value = (*head)->value + tmp;

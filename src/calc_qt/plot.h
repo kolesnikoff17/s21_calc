@@ -1,5 +1,5 @@
-#ifndef PLOT_H
-#define PLOT_H
+#ifndef SRC_CALC_QT_PLOT_H_
+#define SRC_CALC_QT_PLOT_H_
 
 #include <QMainWindow>
 
@@ -36,4 +36,4 @@ class Plot : public QMainWindow {
   bool LimitsAreBlank();
 };
 
-#endif  // PLOT_H
+#endif  // SRC_CALC_QT_PLOT_H_

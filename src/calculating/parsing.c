@@ -16,7 +16,6 @@ char* parsing(char* input, int* err) {
     else if (is_short_operator(*input))
       input = short_operator_handler(input, &res, &len, err, &head);
     else if (is_long_operator(input))
-      // TODO fix this ugly part somehow
       input += long_operator_handler(is_long_operator(input), &res, &len, err,
                                      &head);
     else if (*input == ' ')
@@ -70,7 +69,7 @@ char* number_handler_parse(char* input, char** res, int* len) {
   *res = realloc(*res, *len * sizeof(char));
   if (!(*res)) exit(0);
   char* curr = *res + *len - (end - input + 2);
-  sprintf(curr, "%.*s ", (int)(end - input), input);
+  snprintf(curr, (int)(end - input + 2), "%.*s ", (int)(end - input), input);
   return end;
 }
 
@@ -79,7 +78,7 @@ char* x_handler_parse(char* input, char** res, int* len) {
   *res = realloc(*res, *len * sizeof(char));
   if (!(*res)) exit(0);
   char* curr = *res + *len - 3;
-  sprintf(curr, "x ");
+  snprintf(curr, 3 * sizeof(char), "x ");
   return ++input;
 }
 
@@ -132,7 +131,7 @@ void from_stack_to_queue(char** res, int* len, stack** head, int* err) {
   else
     out = pop_char(head);
   char* curr = *res + *len - 3;
-  sprintf(curr, "%c ", out);
+  snprintf(curr, 3 * sizeof(char), "%c ", out);
 }
 
 int unary_handler_parse(char* input, int len) {

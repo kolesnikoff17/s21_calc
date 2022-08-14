@@ -1,11 +1,11 @@
-#ifndef WINDOWSWITCH_H
-#define WINDOWSWITCH_H
+#ifndef SRC_CALC_QT_WINDOWSWITCH_H_
+#define SRC_CALC_QT_WINDOWSWITCH_H_
 
 template <class A, class B>
 void SwitchW(A* ptr) {
-B *window = new B;
-window->show();
-ptr->close();
+  B* window = new B;
+  window->show();
+  ptr->close();
 }
 
-#endif // WINDOWSWITCH_H
+#endif  // SRC_CALC_QT_WINDOWSWITCH_H_

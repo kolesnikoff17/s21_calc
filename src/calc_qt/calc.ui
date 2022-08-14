@@ -490,7 +490,7 @@ QPushButton: pressed {
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	background-color: black;
+	background-color: red;
 	border: 1px #ffffff;
 }
 

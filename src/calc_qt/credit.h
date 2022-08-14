@@ -1,5 +1,5 @@
-#ifndef CREDIT_H
-#define CREDIT_H
+#ifndef SRC_CALC_QT_CREDIT_H_
+#define SRC_CALC_QT_CREDIT_H_
 
 #include <QMainWindow>
 
@@ -32,4 +32,4 @@ class Credit : public QMainWindow {
   void ResetStyleSheet();
 };
 
-#endif  // CREDIT_H
+#endif  // SRC_CALC_QT_CREDIT_H_

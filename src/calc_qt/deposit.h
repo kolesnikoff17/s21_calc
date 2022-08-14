@@ -1,5 +1,5 @@
-#ifndef DEPOSIT_H
-#define DEPOSIT_H
+#ifndef SRC_CALC_QT_DEPOSIT_H_
+#define SRC_CALC_QT_DEPOSIT_H_
 
 #include <QMainWindow>
 
@@ -13,27 +13,25 @@ namespace Ui {
 class Deposit;
 }
 
-class Deposit : public QMainWindow
-{
-    Q_OBJECT
+class Deposit : public QMainWindow {
+  Q_OBJECT
 
-public:
-    explicit Deposit(QWidget *parent = nullptr);
-    ~Deposit();
+ public:
+  explicit Deposit(QWidget *parent = nullptr);
+  ~Deposit();
 
-private:
-    Ui::Deposit *ui;
-    bool Validate();
-    bool AddValidate();
-    bool DecValidate();
+ private:
+  Ui::Deposit *ui;
+  bool Validate();
+  bool AddValidate();
+  bool DecValidate();
 
-private slots:
-    void SwitchToCalc();
-    void SwitchToPlot();
-    void SwitchToCredit();
-    void ResetStyleSheet();
-    void CalcRes();
-
+ private slots:
+  void SwitchToCalc();
+  void SwitchToPlot();
+  void SwitchToCredit();
+  void ResetStyleSheet();
+  void CalcRes();
 };
 
-#endif // DEPOSIT_H
+#endif  // SRC_CALC_QT_DEPOSIT_H_

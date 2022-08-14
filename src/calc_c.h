@@ -1,5 +1,5 @@
-#ifndef SRC_CALC_C_H
-#define SRC_CALC_C_H
+#ifndef SRC_CALC_C_H_
+#define SRC_CALC_C_H_
 
 typedef struct credit_response {
   long monthly;
@@ -22,4 +22,4 @@ cr_res credit_res(double sum, int time, double perc, int mode);
 char* parsing(char* input, int* err);
 double calc_res(char* polish, int* err, double x);
 
-#endif  // SRC_CALC_C_H
+#endif  // SRC_CALC_C_H_
