@@ -53,6 +53,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>Income</string>
       </property>
@@ -69,6 +74,11 @@
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
       </property>
       <property name="text">
        <string>Tax rate</string>
@@ -110,6 +120,11 @@
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
       </property>
       <property name="text">
        <string>Withdrawals amount</string>
@@ -176,6 +191,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>Capitalization of interest</string>
       </property>
@@ -192,6 +212,11 @@
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
       </property>
       <property name="text">
        <string>Replenishments amount</string>
@@ -210,6 +235,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>Total amount</string>
       </property>
@@ -227,6 +257,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>Withdrawals periodicity</string>
       </property>
@@ -243,6 +278,11 @@
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
       </property>
       <property name="text">
        <string>Interest rate</string>
@@ -285,6 +325,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>Amount</string>
       </property>
@@ -302,6 +347,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>Term (in months)</string>
       </property>
@@ -318,6 +368,11 @@
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
       </property>
       <property name="text">
        <string>Replenishments periodicity</string>
@@ -369,6 +424,7 @@
       <property name="styleSheet">
        <string notr="true">QComboBox {
 	background-color: black;
+	color: white;
 }</string>
       </property>
       <item>
@@ -436,6 +492,11 @@
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
       </property>
       <property name="text">
        <string>Tax amount</string>
@@ -558,12 +619,14 @@
 	background-color: black;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -579,6 +642,11 @@ QPushButton: pressed {
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
       </property>
       <property name="text">
        <string>Periodicity of payments</string>

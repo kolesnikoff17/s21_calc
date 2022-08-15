@@ -2,6 +2,8 @@
 
 #include "../calc_c.h"
 
+STACK_FUNC_INIT(double);
+
 double calc_res(char* polish, int* err, double x) {
   char* end;
   double res = strtod(polish, &end);

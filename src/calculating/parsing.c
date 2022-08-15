@@ -2,6 +2,8 @@
 
 #include "../calc_c.h"
 
+STACK_FUNC_INIT(char);
+
 char* parsing(char* input, int* err) {
   int len = 1;
   char* res = calloc(len, sizeof(char));

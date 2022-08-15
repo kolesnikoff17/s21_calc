@@ -13,15 +13,15 @@ END_TEST
 
 START_TEST(parse_test_2) {
   int err = 0;
-  char *out = parsing("56-3", &err);
-  ck_assert_str_eq(out, "56 3 - ");
+  char *out = parsing("56-3 + 32 - 123 + 234", &err);
+  ck_assert_str_eq(out, "56 3 - 32 + 123 - 234 + ");
   free(out);
 }
 END_TEST
 
 START_TEST(parse_test_3) {
   int err = 0;
-  char *out = parsing("tan(  -log(-3)) + 3 / 8 ", &err);
+  char *out = parsing("tan(  -log(   -3)) + 3 / 8 ", &err);
   ck_assert_str_eq(out, "3 u g u t 3 8 / + ");
   free(out);
 }

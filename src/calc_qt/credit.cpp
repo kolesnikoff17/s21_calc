@@ -2,8 +2,8 @@
 #include "credit.h"
 
 #include "calc.h"
-#include "plot.h"
 #include "deposit.h"
+#include "plot.h"
 #include "ui_credit.h"
 
 Credit::Credit(QWidget *parent) : QMainWindow(parent), ui(new Ui::Credit) {
@@ -36,7 +36,19 @@ void Credit::SwitchToPlot() { SwitchW<Credit, Plot>(this); }
 void Credit::SwitchToDeposit() { SwitchW<Credit, Deposit>(this); }
 
 void Credit::ResetStyleSheet() {
-  ui->Res->setStyleSheet("background-color: black");
+  ui->Res->setStyleSheet(
+      "QPushButton { "
+      "background-color: black;"
+      "border: 1px #ffffff;"
+      "padding: 5px;"
+      "color: white;"
+      "}"
+      "QPushButton: pressed {"
+      "background-color: #808080;"
+      "border: 1px #ffffff;"
+      "padding: 5px;"
+      "color: white;"
+      "}");
 }
 
 void Credit::CalculateResult() {
@@ -55,7 +67,11 @@ void Credit::CalculateResult() {
       ui->Monthly->setText(QString::number(a.monthly));
     }
   } else {
-    ui->Res->setStyleSheet("background-color: red");
+    ui->Res->setStyleSheet(
+        "background-color: red;"
+        "color: white;"
+        "border: 1px #ffffff;"
+        "padding: 5px;");
   }
 }
 

@@ -1,10 +1,12 @@
 #include <stdlib.h>
 
-#define STACK_DECLARE(x)                                              \
-  typedef struct stack {                                              \
-    x value;                                                          \
-    struct stack *next;                                               \
-  } stack;                                                            \
+#define STACK_DECLARE(x) \
+  typedef struct stack { \
+    x value;             \
+    struct stack *next;  \
+  } stack;
+
+#define STACK_FUNC_INIT(x)                                            \
                                                                       \
   struct stack *init_##x(x a) {                                       \
     struct stack *p;                                                  \

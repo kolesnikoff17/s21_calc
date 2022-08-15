@@ -59,13 +59,14 @@
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -128,12 +129,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -160,13 +163,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -193,13 +197,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -226,13 +231,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -259,13 +265,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -292,12 +299,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -324,12 +333,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -362,12 +373,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -394,12 +407,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -426,13 +441,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -459,13 +475,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -492,12 +509,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -524,13 +543,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -557,13 +577,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -590,12 +611,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -622,12 +645,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -654,12 +679,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -686,13 +713,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -719,13 +747,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -752,13 +781,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -785,12 +815,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -848,14 +880,16 @@ QPushButton: pressed {
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	background-color: rgb(157, 0, 20);
+	background-color: rgb(150, 0, 10);
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -888,13 +922,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -921,13 +956,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -954,12 +990,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -986,13 +1024,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -1019,13 +1058,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -1052,13 +1092,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -1085,12 +1126,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -1123,13 +1166,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -1156,12 +1200,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -1188,13 +1234,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -1221,13 +1268,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -1260,12 +1308,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -1292,13 +1342,14 @@ QPushButton: pressed {
        <string notr="true">QPushButton {
 	background-color: black;
 	border: 1px #ffffff;
-	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">

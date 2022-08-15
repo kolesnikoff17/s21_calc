@@ -29,6 +29,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>[</string>
       </property>
@@ -115,6 +120,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>y ∈</string>
       </property>
@@ -165,6 +175,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>;</string>
       </property>
@@ -179,6 +194,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>;</string>
       </property>
@@ -192,6 +212,11 @@
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
       </property>
       <property name="text">
        <string>]</string>
@@ -256,6 +281,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>x ∈</string>
       </property>
@@ -272,6 +302,11 @@
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
       </property>
       <property name="text">
        <string>[</string>
@@ -320,6 +355,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>]</string>
       </property>
@@ -339,6 +379,11 @@
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
       </property>
       <property name="text">
        <string>f(x) = </string>
@@ -368,12 +413,14 @@
 	background-color: black;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">
@@ -401,12 +448,14 @@ QPushButton: pressed {
 	background-color: black;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">

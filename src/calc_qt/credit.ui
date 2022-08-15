@@ -35,6 +35,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>Total</string>
       </property>
@@ -52,6 +57,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>Monthly</string>
       </property>
@@ -68,6 +78,11 @@
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
       </property>
       <property name="text">
        <string>Term (in months)</string>
@@ -116,6 +131,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>Ammount</string>
       </property>
@@ -132,6 +152,11 @@
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
       </property>
       <property name="text">
        <string>Type</string>
@@ -150,6 +175,11 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
+      </property>
       <property name="text">
        <string>Overpayment</string>
       </property>
@@ -166,6 +196,11 @@
         <pointsize>18</pointsize>
         <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color: white;
+}</string>
       </property>
       <property name="text">
        <string>Interest rate</string>
@@ -310,6 +345,7 @@
       <property name="styleSheet">
        <string notr="true">QComboBox {
 	background-color: black;
+	color: white;
 }</string>
       </property>
       <item>
@@ -380,12 +416,14 @@
 	background-color: black;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }
 
 QPushButton: pressed {
 	background-color: #808080;
 	border: 1px #ffffff;
 	padding: 5px;
+	color: white;
 }</string>
       </property>
       <property name="text">

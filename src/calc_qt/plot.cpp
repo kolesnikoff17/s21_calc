@@ -37,6 +37,12 @@ Plot::Plot(QWidget *parent) : QMainWindow(parent), ui(new Ui::Plot) {
 
 Plot::~Plot() { delete ui; }
 
+static const QString errStyle =
+    "background-color: red;"
+    "color: white;"
+    "border: 1px #ffffff;"
+    "padding: 5px;";
+
 void Plot::MakePlot() {
   if (xcheckLimits() && (ycheckLimits() || LimitsAreBlank())) {
     int err = 0;
@@ -64,19 +70,31 @@ void Plot::MakePlot() {
         ui->widget->xAxis->setRange(xmin, xmax);
         ui->widget->replot();
       } else {
-        ui->ButtonPlot->setStyleSheet("background-color: red");
+        ui->ButtonPlot->setStyleSheet(errStyle);
       }
     } else {
-      ui->ButtonPlot->setStyleSheet("background-color: red");
+      ui->ButtonPlot->setStyleSheet(errStyle);
     }
     std::free(polish);
   } else {
-    ui->ButtonPlot->setStyleSheet("background-color: red");
+    ui->ButtonPlot->setStyleSheet(errStyle);
   }
 }
 
 void Plot::ResetStyleSheet() {
-  ui->ButtonPlot->setStyleSheet("background-color: black");
+  ui->ButtonPlot->setStyleSheet(
+      "QPushButton {"
+      "background-color: black;"
+      "border: 1px #ffffff;"
+      "padding: 5px;"
+      "color: white;"
+      "}"
+      "QPushButton: pressed {"
+      "background-color: #808080;"
+      "border: 1px #ffffff;"
+      "padding: 5px;"
+      "color: white;"
+      "}");
 }
 
 void Plot::SwitchToCalc() { SwitchW<Plot, calc>(this); }
