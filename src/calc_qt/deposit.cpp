@@ -82,6 +82,7 @@ void Deposit::CalcRes() {
       ui->Inc->setText(QString::number(res.income));
       ui->Tax->setText(QString::number(res.tax));
       ui->Total->setText(QString::number(res.total));
+      this->ResetStyleSheet();
     } else {
       ui->ErrMsg->setText("To much withdrawal");
     }

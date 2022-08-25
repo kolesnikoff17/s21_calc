@@ -9,22 +9,34 @@ char* parsing(char* input, int* err) {
   char* res = calloc(len, sizeof(char));
   if (!res) exit(0);
   stack* head = init_char(' ');
+  char long_op_spec = 0;
+  int num_check = 0;
+  int long_is_last = 0;
   for (; *input && !(*err);) {
-    // printf("%d %s\n ", *err, input);
-    if (is_number(*input))
+    if (is_number(*input)) {
       input = number_handler_parse(input, &res, &len);
-    else if (*input == 'x' || *input == 'X')
+      num_check++;
+      long_is_last = 0;
+    } else if (*input == 'x' || *input == 'X') {
       input = x_handler_parse(input, &res, &len);
-    else if (is_short_operator(*input))
+      num_check++;
+      long_is_last = 0;
+    } else if (is_short_operator(*input)) {
       input = short_operator_handler(input, &res, &len, err, &head);
-    else if (is_long_operator(input))
-      input += long_operator_handler(is_long_operator(input), &res, &len, err,
-                                     &head);
-    else if (*input == ' ')
+      num_check = 0;
+      long_is_last = 0;
+    } else if ((long_op_spec = is_long_operator(input))) {
+      input += long_operator_handler(long_op_spec, &res, &len, err, &head);
+      num_check = 0;
+      long_is_last = 1;
+    } else if (*input == ' ') {
       ++input;
-    else
+    } else {
       *err = 1;
+    }
+    if (num_check > 1) *err = 1;
   }
+  if (long_is_last) *err = 1;
   while (!(*err) && head->value != ' ')
     from_stack_to_queue(&res, &len, &head, err);
   destroy_char(head);
